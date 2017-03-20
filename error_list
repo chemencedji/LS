@@ -1,0 +1,52 @@
+>>>> 21_test_symlink.spec.c ------ [FAIL] TTT. [TIME] unitTest_00 -> (null)
+rm: ./sandbox: Directory not empty
+rm: ./sandbox: Directory not empty
+>>>> bonus_03_test_opt_U.spec.c -- [FAIL] TTT [TIME] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> bonus_40_dir_root.spec.c ---- [FAIL] T [TIME] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> 20_test_error_handling.spec.c [FAIL] ............F.F.FFF.FFFFF [FAIL] unitTest_12 -> strcmp(ls_out_str, ft_ls_out_str) == 0
+>>>> 01_test_opt_R.spec.c -------- [FAIL] ...F... [FAIL] simple_test_3 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> 02_test_sorted.spec.c ------- [Ok !] ...
+>>>> bonus_01_test_opt_d.spec.c -- [FAIL] FFFFFFFFFF [FAIL] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> 14_test_hyphen_harder.spec.c  [FAIL] .....FFFFF [FAIL] unitTest_05 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> bonus_22_test_sort_comb.spec. [FAIL] FFFFFFFFFFFF [FAIL] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> 30_test_opt_mix.spec.c ------ [FAIL] F [FAIL] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> bonus_04_test_opt_c.spec.c -- [FAIL] TTTTTTT [TIME] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> 11_test_single_file.spec.c -- [Ok !] ..
+>>>> bonus_12_test_opt_o_og.spec.c [FAIL] FF.F [FAIL] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> 00_test_without_opt.spec.c -- [FAIL] ..F [FAIL] simple_test_3 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> bonus_13_test_opt_F_Fp.spec.c [FAIL] FFFFFFF [FAIL] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> bonus_11_test_opt_g.spec.c -- [FAIL] FF. [FAIL] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> sys_04_test_var_run.spec.c -- [FAIL] F [FAIL] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> bonus_08_test_opt_1.spec.c -- [FAIL] F. [FAIL] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> 22_test_no_username.spec.c -- [Ok !] .
+>>>> 10_test_opt_aRl.spec.c ------ [Ok !] .
+rm: ./sandbox: Directory not empty
+mkdir: ./sandbox: File exists
+rm: ./sandbox: Directory not empty
+mkdir: ./sandbox: File exists
+>>>> 08_test_opt_l.spec.c -------- [FAIL] ...T... [TIME] simple_test_3 -> (null)
+>>>> sys_02_test_etc.spec.c ------ [FAIL] T [TIME] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> 07_test_opt_tR_bis.spec.c --- [Ok !] .
+>>>> 13_test_hyphen_hard.spec.c -- [Ok !] ........
+>>>> bonus_21_test_opt_mix_sort.sp [FAIL] TT [TIME] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> 26_perm_special_bits_dir.spec [Ok !] ................
+>>>> bonus_10_test_opt_T.spec.c -- [FAIL] F [FAIL] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> bonus_20_test_opt_comb_aA.spe [Ok !] ..
+>>>> 23_test_no_groupname.spec.c - [Ok !] .
+>>>> bonus_09_test_opt_f.spec.c -- [FAIL] FF [FAIL] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> sys_00_test_user_bin.spec.c - [FAIL] TTTT [TIME] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> bonus_34_test_redis.spec.c -- [Ok !] .
+>>>> 07_test_opt_t.spec.c -------- [FAIL] ......F [FAIL] simple_test_6 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> 06_test_opt_rR.spec.c ------- [Ok !] ....
+>>>> bonus_07_test_opt_A.spec.c -- [FAIL] FF.. [FAIL] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> bonus_30_test_xattr.spec.c -- [FAIL] T [TIME] unitTest_00 -> (null)
+xattr: No such file: file
+>>>> bonus_06_test_opt_u.spec.c -- [FAIL] FFFFFFFFFFFFFFFFFF.FFF [FAIL] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> 05_test_opt_r.spec.c -------- [Ok !] ...
+>>>> 12_test_permissions.spec.c -- [Ok !] ..
+sh: line 1: 93589 Segmentation fault: 11  /nfs/2016/i/ichemenc/Academy/ls2_2/ft_ls -1 . . 2>&1
+>>>> 24_test_multiple_files.spec.c [FAIL] TFF [TIME] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> bonus_02_test_opt_p.spec.c -- [FAIL] FFTTF [FAIL] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> 03_test_multiple_dir.spec.c - [FAIL] FFF.. [FAIL] simple_test_0 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> bonus_32_test_ACL.spec.c ---- [FAIL] T [TIME] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
+>>>> bonus_05_test_opt_S.spec.c -- [FAIL] F..FF [FAIL] unitTest_00 -> strcmp(ls(cmd), ft_ls(cmd)) == 0
