@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_util.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ichemenc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/03/20 20:16:12 by ichemenc          #+#    #+#             */
+/*   Updated: 2017/03/20 21:02:22 by ichemenc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft/includes/libft.h"
 #include "ft_ls.h"
 
-void	print_filetype(mode_t mode)
+void		print_filetype(mode_t mode)
 {
 	mode = mode & S_IFMT;
 	if (mode == S_IFREG)
@@ -12,7 +23,7 @@ void	print_filetype(mode_t mode)
 	else if (mode == S_IFLNK)
 	{
 		write(1, "l", 1);
-		is_link = 1;
+		g_is_link = 1;
 	}
 	else if (mode == S_IFBLK)
 		write(1, "b", 1);
@@ -26,14 +37,14 @@ void	print_filetype(mode_t mode)
 		write(1, "?", 1);
 }
 
-void	print_filepermissions(mode_t mode)
+void		print_filepermissions(mode_t mode)
 {
 	printrwx(mode & S_IRUSR, mode & S_IWUSR, mode & S_IXUSR, mode & S_ISUID);
 	printrwx(mode & S_IRGRP, mode & S_IWGRP, mode & S_IXGRP, mode & S_ISGID);
 	printrwx(mode & S_IROTH, mode & S_IWOTH, mode & S_IXOTH, mode & S_ISVTX);
 }
 
-void	printrwx(int rd, int wr, int ex, int flag)
+void		printrwx(int rd, int wr, int ex, int flag)
 {
 	if (rd)
 		write(1, "r", 1);

@@ -6,7 +6,7 @@
 /*   By: ichemenc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 13:44:02 by ichemenc          #+#    #+#             */
-/*   Updated: 2017/03/19 14:32:13 by ichemenc         ###   ########.fr       */
+/*   Updated: 2017/03/20 20:53:01 by ichemenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void				ft_add_elem(tl_list **ptr_r, tl_list **ret_r)
 
 	p = *ptr_r;
 	ret = *ret_r;
-	if ((t == 0 && ft_strcmp(p->name, ret->name) >= 0) || (t == 1 &&
+	if ((g_t == 0 && ft_strcmp(p->name, ret->name) >= 0) || (g_t == 1 &&
 		(((ret->tv_sec) > (p->tv_sec)) || ((ret->tv_sec) == (p->tv_sec) &&
 		(ret->tv_nsec) > (p->tv_nsec)) || ((ret->tv_sec) == (p->tv_sec) &&
 		(ret->tv_nsec) == (p->tv_nsec) && ft_strcmp(p->name, ret->name) >= 0))))
@@ -34,14 +34,7 @@ void				ft_add_elem(tl_list **ptr_r, tl_list **ret_r)
 			ck->next = ret;
 	}
 	else
-	{
-		ret->next = p->next;
-		ret->prev = p;
-		p->next = ret;
-		ck = ret->next;
-		if (ret->next != NULL)
-			ck->prev = ret;
-	}
+		ft_add_help(ptr_r, ret_r);
 }
 
 tl_list				*list_create(tl_list **begin_list, char *n, char *str)
@@ -50,11 +43,11 @@ tl_list				*list_create(tl_list **begin_list, char *n, char *str)
 	tl_list			*ptr;
 
 	ptr = *begin_list;
-	u = 0;
+	g_u = 0;
 	ret = ft_cr_alist(n, str);
 	if (ret == NULL)
 		return (NULL);
-	if (t == 1)
+	if (g_t == 1)
 	{
 		while (ptr->next != NULL && ((ret->tv_sec < ptr->tv_sec) ||
 				(ret->tv_sec == ptr->tv_sec && ret->tv_nsec < ptr->tv_nsec) ||
@@ -121,12 +114,12 @@ tl_list				*ft_cr_alist(char *name, char *str)
 	if (e == NULL)
 		return (NULL);
 	e->type = ft_is_dir(ft_strjoin_ls(e->path, e->name));
-	if (e->type == 0 && (r_up == 1 || u == 0) &&
+	if (e->type == 0 && (g_r_up == 1 || g_u == 0) &&
 		ft_is_link(ft_strjoin_ls(e->path, e->name)) != 1 &&
 		(!(ft_strcmp(e->name, ".") == 0 || ft_strcmp(e->name, "..") == 0)))
 	{
-		if (r_up != 1)
-			u = 1;
+		if (g_r_up != 1)
+			g_u = 1;
 		if (*((char*)(e->path + (i - 1))) == '/')
 		{
 			i = ft_strlen(e->path);
@@ -134,7 +127,7 @@ tl_list				*ft_cr_alist(char *name, char *str)
 		}
 		e->sub = ft_just_ls(ft_strjoin_ls(e->path, e->name));
 	}
-	if (t == 1)
+	if (g_t == 1)
 		ft_set_time(&e);
 	return (e);
 }

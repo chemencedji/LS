@@ -6,7 +6,7 @@
 /*   By: ichemenc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 14:32:24 by ichemenc          #+#    #+#             */
-/*   Updated: 2017/03/19 15:08:06 by ichemenc         ###   ########.fr       */
+/*   Updated: 2017/03/20 20:53:37 by ichemenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ void		ft_printlink(int nbr)
 	int		f;
 
 	i = ndigits(nbr);
-	f = size1;
-	while(f > i)
+	f = g_size1;
+	while (f > i)
 	{
 		ft_putstr(" ");
 		f--;
@@ -69,8 +69,8 @@ void		ft_print_pw_name(char *str)
 	int		f;
 
 	i = ft_strlen(str);
-	f = size2;
-	while(f > i)
+	f = g_size2;
+	while (f > i)
 	{
 		ft_putstr(" ");
 		f--;
@@ -83,9 +83,9 @@ void		ft_open_dir_error(tl_list **elem)
 	tl_list	*ptr;
 
 	ptr = *elem;
-	if(ptr->next != NULL || ptr->prev != NULL)
+	if (ptr->next != NULL || ptr->prev != NULL)
 	{
-		ft_putstr_fd((ft_strjoin("\n", ptr->name)), 2);
+		ft_putstr_fd(ft_strjoin("\n", ft_strjoin("./", ptr->name)), 2);
 		ft_putstr_fd(":\n", 2);
 	}
 	ft_putstr_fd("ls: ", 2);

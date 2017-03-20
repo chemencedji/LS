@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_ls.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ichemenc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/03/20 19:31:07 by ichemenc          #+#    #+#             */
+/*   Updated: 2017/03/20 21:03:48 by ichemenc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft/includes/libft.h"
 #include "ft_ls.h"
@@ -12,90 +23,89 @@ void		ft_total(tl_list **all)
 
 void		ft_go_sub_list(tl_list **elem)
 {
-	tl_list *ptr;
+	tl_list	*ptr;
 	DIR		*dir;
-	
+
 	ptr = *elem;
-	if((dir = opendir(ptr->name)) == NULL && ptr->sub == NULL)
+	if ((dir = opendir(ptr->name)) == NULL && ptr->sub == NULL)
 		ft_open_dir_error(&ptr);
-	else if(ptr->sub != NULL)
+	else if (ptr->sub != NULL)
 	{
 		ft_putstr("\n");
-		if(r == 1)
+		if (g_r == 1)
 			ft_emthy_ls_with_r(&ptr->sub);
 		else
 			ft_emthy_ls(&ptr->sub);
 	}
 }
 
-void        ft_emthy_ls(tl_list **list)
+void		ft_emthy_ls(tl_list **list)
 {
-	tl_list *all_list;
 	tl_list *ptr;
-	
-	all_list = *list;
+
 	ptr = *list;
-	if(r_up == 1)
+	ft_name(list);
+	ft_list_scrol(list);
+	while (ptr && g_r_up == 1)
 	{
-		if (z == 1)
-				ft_putstr(ft_strjoin(all_list->path,":\n"));
-		z = 1;
-	}
-	if(l == 1)
-		ft_total(list);
-	ft_list_scrol(&all_list);
-	while(ptr && r_up == 1)
-	{
-		if(ptr->type == 0)
+		if (ptr->type == 0)
 		{
-			if(*((char*)ptr->name) == '.' && a == 0)
+			if (*((char*)ptr->name) == '.' && g_a == 0)
 				ptr = ptr->next;
-			else if(!(ft_strcmp(ptr->name, ".") == 0 || ft_strcmp(ptr->name, "..") == 0))
+			else if (!(ft_strcmp(ptr->name, ".") == 0 ||
+						ft_strcmp(ptr->name, "..") == 0))
 			{
 				ft_go_sub_list(&ptr);
-				ptr= ptr->next;
+				ptr = ptr->next;
 			}
 			else
-				ptr= ptr->next;
+				ptr = ptr->next;
 		}
 		else
 			ptr = ptr->next;
 	}
 }
 
-void        ft_emthy_ls_with_r(tl_list **list)
+void		ft_emthy_ls_with_r(tl_list **list)
 {
-	tl_list *all_list;
 	tl_list *ptr;
 
-	all_list = *list;
-	if(r_up == 1)
+	ptr = *list;
+	ft_name(list);
+	while (ptr->next != NULL)
+		ptr = ptr->next;
+	ft_list_scrol(&ptr);
+	while (ptr && g_r_up == 1)
 	{
-		if(z == 1)
-			ft_putstr(ft_strjoin(all_list->path,":\n"));
-		z = 1;
-	}
-	if(l == 1)
-		ft_total(list);
-	while(all_list->next != NULL)
-		all_list = all_list->next;
-	ptr = all_list;
-	ft_list_scrol(&all_list);
-	while(ptr && r_up == 1)
-	{
-		if(ptr->type == 0)
+		if (ptr->type == 0)
 		{
-			if(*((char*)ptr->name) == '.' && a == 0)
+			if (*((char*)ptr->name) == '.' && g_a == 0)
 				ptr = ptr->prev;
-			else if(!(ft_strcmp(ptr->name, ".") == 0 || ft_strcmp(ptr->name, "..") == 0))
+			else if (!(ft_strcmp(ptr->name, ".") == 0 ||
+						ft_strcmp(ptr->name, "..") == 0))
 			{
 				ft_go_sub_list(&ptr);
 				ptr = ptr->prev;
 			}
 			else
-				ptr= ptr->next;
+				ptr = ptr->next;
 		}
 		else
 			ptr = ptr->prev;
 	}
+}
+
+void		ft_name(tl_list **elem)
+{
+	tl_list	*all_list;
+
+	all_list = *elem;
+	if (g_r_up == 1)
+	{
+		if (g_z == 1)
+			ft_putstr(ft_strjoin(all_list->path, ":\n"));
+		g_z = 1;
+	}
+	if (g_l == 1)
+		ft_total(elem);
 }

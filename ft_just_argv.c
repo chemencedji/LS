@@ -6,7 +6,7 @@
 /*   By: ichemenc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/17 19:45:19 by ichemenc          #+#    #+#             */
-/*   Updated: 2017/03/19 14:23:54 by ichemenc         ###   ########.fr       */
+/*   Updated: 2017/03/20 20:52:04 by ichemenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ tl_list				*ft_just_argv(tl_list **list)
 	all_list = NULL;
 	while (ptr)
 	{
-		u = 0;
+		g_u = 0;
 		if (all_list == NULL)
 			all_list = ft_cr_argvlist(ptr->name, ".");
 		else
@@ -40,11 +40,11 @@ tl_list				*ft_cr_argvlist(char *name, char *str)
 	if (elem == NULL)
 		return (NULL);
 	elem->type = ft_is_dir(ft_strjoin_ls(elem->path, elem->name));
-	if (elem->type == 0 && (r_up == 1 || u == 0))
+	if (elem->type == 0 && (g_r_up == 1 || g_u == 0))
 	{
-		if (r_up != 1)
-			u = 1;
-		if (l == 0 && ft_is_dir(ft_linkname(&elem)) == 0 &&
+		if (g_r_up != 1)
+			g_u = 1;
+		if (g_l == 0 && ft_is_dir(ft_linkname(&elem)) == 0 &&
 				(ft_is_link(ft_strjoin_ls(elem->path, elem->name)) == 1 ||
 				ft_is_link(elem->name) == 1))
 			elem->sub = ft_just_ls(ft_linkname(&elem));
@@ -53,7 +53,7 @@ tl_list				*ft_cr_argvlist(char *name, char *str)
 		else
 			elem->sub = ft_just_ls(ft_strjoin_ls(elem->path, elem->name));
 	}
-	if (t == 1)
+	if (g_t == 1)
 		ft_set_time(&elem);
 	return (elem);
 }
@@ -88,7 +88,7 @@ tl_list				*list_create_ar(tl_list **begin_list, char *n, char *str)
 	ret = ft_cr_argvlist(n, str);
 	if (ret == NULL)
 		return (NULL);
-	if (t == 1)
+	if (g_t == 1)
 	{
 		while (ptr->next != NULL && ((ret->tv_sec < ptr->tv_sec) ||
 				(ret->tv_sec == ptr->tv_sec && ret->tv_nsec < ptr->tv_nsec) ||

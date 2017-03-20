@@ -6,14 +6,14 @@
 /*   By: ichemenc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/17 18:24:37 by ichemenc          #+#    #+#             */
-/*   Updated: 2017/03/19 14:12:51 by ichemenc         ###   ########.fr       */
+/*   Updated: 2017/03/20 21:24:20 by ichemenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/includes/libft.h"
 #include "ft_ls.h"
 
-int		ft_check(char *s)
+int			ft_check(char *s)
 {
 	int		i;
 
@@ -24,21 +24,20 @@ int		ft_check(char *s)
 		{
 			ft_putstr_fd(LS_INV, 2);
 			ft_putchar_fd(s[i], 2);
-			ft_putstr_fd(USAGE, 2);
-			argc_num++;
-			er_ck = 1;
+			ft_putstr_fd(US, 2);
+			g_argc_num++;
 			return (1);
 		}
 		if (s[i] == 'l')
-			l = 1;
+			g_l = 1;
 		if (s[i] == 'R')
-			r_up = 1;
+			g_r_up = 1;
 		if (s[i] == 'a')
-			a = 1;
+			g_a = 1;
 		if (s[i] == 'r')
-			r = 1;
+			g_r = 1;
 		if (s[i] == 't')
-			t = 1;
+			g_t = 1;
 	}
 	return (0);
 }
@@ -75,21 +74,13 @@ void		ft_check_argv(tl_list **list)
 				return ;
 			}
 			else
-			{
 				ft_sort_for_ck_ar(&ptr, list);
-				if(ptr->next== NULL)
-                    break ;
-                ptr= ptr->next;
-			}
 		}
-		else
-		{
-			if (ptr->next == NULL)
-				break ;
-			ptr = ptr->next;
-		}
+		if (ptr->next == NULL)
+			break ;
+		ptr = ptr->next;
 	}
-	if (ptr && er_ck == 0)
+	if (ptr && g_er_ck == 0)
 		ft_execute_argv(list);
 }
 
@@ -98,9 +89,9 @@ void		ft_execute_argv(tl_list **list)
 	tl_list	*ptr;
 
 	ptr = ft_just_argv(list);
-	if (l == 1)
+	if (g_l == 1)
 		ft_size_ls(&ptr);
-	if (r == 1)
+	if (g_r == 1)
 		ft_emthy_argv_with_r(&ptr);
 	else
 		ft_emthy_argv(&ptr);
