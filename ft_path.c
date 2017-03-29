@@ -78,9 +78,9 @@ void		ft_print_pw_name(char *str)
 	ft_putstr(str);
 }
 
-void		ft_open_dir_error(tl_list **elem)
+void		ft_open_dir_error(t_ls **elem)
 {
-	tl_list	*ptr;
+	t_ls	*ptr;
 
 	ptr = *elem;
 	if (ptr->next != NULL || ptr->prev != NULL)

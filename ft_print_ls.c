@@ -13,7 +13,7 @@
 #include "libft/includes/libft.h"
 #include "ft_ls.h"
 
-void		ft_total(tl_list **all)
+void		ft_total(t_ls **all)
 {
 	ft_putstr("total ");
 	ft_putnbr(ft_block_size(all));
@@ -21,9 +21,9 @@ void		ft_total(tl_list **all)
 	ft_size_ls(all);
 }
 
-void		ft_go_sub_list(tl_list **elem)
+void		ft_go_sub_list(t_ls **elem)
 {
-	tl_list	*ptr;
+	t_ls	*ptr;
 	DIR		*dir;
 
 	ptr = *elem;
@@ -39,9 +39,9 @@ void		ft_go_sub_list(tl_list **elem)
 	}
 }
 
-void		ft_emthy_ls(tl_list **list)
+void		ft_emthy_ls(t_ls **list)
 {
-	tl_list *ptr;
+	t_ls *ptr;
 
 	ptr = *list;
 	ft_name(list);
@@ -66,9 +66,9 @@ void		ft_emthy_ls(tl_list **list)
 	}
 }
 
-void		ft_emthy_ls_with_r(tl_list **list)
+void		ft_emthy_ls_with_r(t_ls **list)
 {
-	tl_list *ptr;
+	t_ls *ptr;
 
 	ptr = *list;
 	ft_name(list);
@@ -95,9 +95,9 @@ void		ft_emthy_ls_with_r(tl_list **list)
 	}
 }
 
-void		ft_name(tl_list **elem)
+void		ft_name(t_ls **elem)
 {
-	tl_list	*all_list;
+	t_ls	*all_list;
 
 	all_list = *elem;
 	if (g_r_up == 1)

@@ -13,10 +13,10 @@
 #include "libft/includes/libft.h"
 #include "ft_ls.h"
 
-void			ft_go_sub_argv(tl_list **elem, int x)
+void			ft_go_sub_argv(t_ls **elem, int x)
 {
 	DIR			*dir;
-	tl_list		*ptr;
+	t_ls		*ptr;
 
 	ptr = *elem;
 	if (ft_strcmp(ptr->name, ".") == 0)
@@ -38,13 +38,12 @@ void			ft_go_sub_argv(tl_list **elem, int x)
 		ft_argv_else(&ptr, x);
 }
 
-void			ft_emthy_argv(tl_list **list)
+void			ft_emthy_argv(t_ls **list)
 {
-	tl_list		*ptr;
+	t_ls		*ptr;
 
 	ptr = *list;
 	g_x = 0;
-	g_y = 0;
 	g_cont = 0;
 	g_suka = 0;
 	if (g_l == 1)
@@ -61,9 +60,9 @@ void			ft_emthy_argv(tl_list **list)
 	}
 }
 
-void			ft_first_part(tl_list **elem)
+void			ft_first_part(t_ls **elem)
 {
-	tl_list *all_list;
+	t_ls *all_list;
 
 	all_list = *elem;
 	g_is_link = 0;
@@ -85,14 +84,13 @@ void			ft_first_part(tl_list **elem)
 	g_suka++;
 }
 
-void			ft_emthy_argv_with_r(tl_list **list)
+void			ft_emthy_argv_with_r(t_ls **list)
 {
-	tl_list		*all_list;
-	tl_list		*ptr;
+	t_ls		*all_list;
+	t_ls		*ptr;
 
 	all_list = *list;
 	g_x = 0;
-	g_y = 0;
 	g_cont = 0;
 	g_suka = 0;
 	if (g_l == 1)

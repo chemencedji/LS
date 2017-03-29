@@ -13,11 +13,11 @@
 #include "libft/includes/libft.h"
 #include "ft_ls.h"
 
-void				ft_add_help(tl_list **ptr_r, tl_list **ret_r)
+void				ft_add_help(t_ls **ptr_r, t_ls **ret_r)
 {
-	tl_list			*p;
-	tl_list			*ret;
-	tl_list			*ck;
+	t_ls			*p;
+	t_ls			*ret;
+	t_ls			*ck;
 
 	p = *ptr_r;
 	ret = *ret_r;
@@ -29,9 +29,9 @@ void				ft_add_help(tl_list **ptr_r, tl_list **ret_r)
 		ck->prev = ret;
 }
 
-void				ft_go_sub_print(tl_list **elem)
+void				ft_go_sub_print(t_ls **elem)
 {
-	tl_list			*ptr;
+	t_ls			*ptr;
 
 	ptr = *elem;
 	if (g_r == 1)
@@ -40,9 +40,9 @@ void				ft_go_sub_print(tl_list **elem)
 		ft_emthy_ls(&ptr->sub);
 }
 
-void				ft_argv_else(tl_list **elem, int x)
+void				ft_argv_else(t_ls **elem, int x)
 {
-	tl_list			*ptr;
+	t_ls			*ptr;
 
 	ptr = *elem;
 	if ((g_cont > 1 || g_r_up == 1 || g_argc_num > 1) && ptr->sub != NULL)
@@ -68,10 +68,10 @@ void				ft_argv_else(tl_list **elem, int x)
 		ft_go_sub_print(&ptr);
 }
 
-int					ft_argv_scrol_r(tl_list **list)
+int					ft_argv_scrol_r(t_ls **list)
 {
 	int				x;
-	tl_list			*a;
+	t_ls			*a;
 	DIR				*dir;
 
 	x = 0;
@@ -97,10 +97,10 @@ int					ft_argv_scrol_r(tl_list **list)
 	return (x);
 }
 
-int					ft_lslen(tl_list **list)
+int					ft_lslen(t_ls **list)
 {
 	int				i;
-	tl_list			*ptr;
+	t_ls			*ptr;
 
 	ptr = *list;
 	i = 0;

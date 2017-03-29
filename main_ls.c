@@ -13,7 +13,25 @@
 #include "libft/includes/libft.h"
 #include "ft_ls.h"
 
-int g_a = 0;
+int	g_l;
+int	g_r_up;
+int	g_a;
+int	g_r;
+int	g_t;
+int	g_z;
+int	g_x;
+int	g_u;
+int	g_argc_num;
+int	g_errno;
+int	g_er_ck;
+int	g_is_link;
+int	g_cont;
+int	g_suka;
+int	g_size1;
+int	g_size2;
+int	g_size3;
+int	g_size4;
+
 int				main(int argc, char **argv)
 {
 	int			j;
@@ -55,7 +73,7 @@ void			ft_set_char(void)
 
 void			ft_argv_list_main(char **ar)
 {
-	tl_list		*argv_list;
+	t_ls		*argv_list;
 	int			j;
 	int			c;
 
@@ -82,11 +100,11 @@ void			ft_argv_list_main(char **ar)
 		ft_execute(".");
 }
 
-tl_list			*ft_cr_argv(char *str, char *path)
+t_ls			*ft_cr_argv(char *str, char *path)
 {
-	tl_list		*elem;
+	t_ls		*elem;
 
-	elem = (tl_list*)malloc(sizeof(tl_list));
+	elem = (t_ls*)malloc(sizeof(t_ls));
 	if (elem == NULL)
 		return (NULL);
 	elem->name = ft_strdup(str);
@@ -99,7 +117,7 @@ tl_list			*ft_cr_argv(char *str, char *path)
 
 void			ft_execute(char *str)
 {
-	tl_list		*all_list;
+	t_ls		*all_list;
 
 	all_list = ft_just_ls(str);
 	if (g_r == 1)

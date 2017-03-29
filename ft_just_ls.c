@@ -13,11 +13,11 @@
 #include "libft/includes/libft.h"
 #include "ft_ls.h"
 
-void				ft_add_elem(tl_list **ptr_r, tl_list **ret_r)
+void				ft_add_elem(t_ls **ptr_r, t_ls **ret_r)
 {
-	tl_list			*p;
-	tl_list			*ret;
-	tl_list			*ck;
+	t_ls			*p;
+	t_ls			*ret;
+	t_ls			*ck;
 
 	p = *ptr_r;
 	ret = *ret_r;
@@ -37,10 +37,10 @@ void				ft_add_elem(tl_list **ptr_r, tl_list **ret_r)
 		ft_add_help(ptr_r, ret_r);
 }
 
-tl_list				*list_create(tl_list **begin_list, char *n, char *str)
+t_ls				*list_create(t_ls **begin_list, char *n, char *str)
 {
-	tl_list			*ret;
-	tl_list			*ptr;
+	t_ls			*ret;
+	t_ls			*ptr;
 
 	ptr = *begin_list;
 	g_u = 0;
@@ -64,9 +64,9 @@ tl_list				*list_create(tl_list **begin_list, char *n, char *str)
 	return (return_tlist(&ptr, begin_list, &ret));
 }
 
-tl_list				*ft_just_ls(char *str)
+t_ls				*ft_just_ls(char *str)
 {
-	tl_list			*all_list;
+	t_ls			*all_list;
 	DIR				*dir;
 	struct dirent	*sd;
 
@@ -85,9 +85,9 @@ tl_list				*ft_just_ls(char *str)
 	return (all_list);
 }
 
-tl_list				*ft_just_ls_ar(char *str)
+t_ls				*ft_just_ls_ar(char *str)
 {
-	tl_list			*all_list;
+	t_ls			*all_list;
 	DIR				*dir;
 	struct dirent	*sd;
 
@@ -104,9 +104,9 @@ tl_list				*ft_just_ls_ar(char *str)
 	return (all_list);
 }
 
-tl_list				*ft_cr_alist(char *name, char *str)
+t_ls				*ft_cr_alist(char *name, char *str)
 {
-	tl_list			*e;
+	t_ls			*e;
 	int				i;
 
 	i = 0;

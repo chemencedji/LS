@@ -42,10 +42,10 @@ int			ft_check(char *s)
 	return (0);
 }
 
-tl_list		*list_argv(tl_list **begin_list, char *n)
+t_ls		*list_argv(t_ls **begin_list, char *n)
 {
-	tl_list	*ret;
-	tl_list	*ptr;
+	t_ls	*ret;
+	t_ls	*ptr;
 
 	ptr = *begin_list;
 	ret = ft_cr_argv(n, ".");
@@ -57,9 +57,9 @@ tl_list		*list_argv(tl_list **begin_list, char *n)
 	return (return_tlist(&ptr, begin_list, &ret));
 }
 
-void		ft_check_argv(tl_list **list)
+void		ft_check_argv(t_ls **list)
 {
-	tl_list	*ptr;
+	t_ls	*ptr;
 
 	ptr = *list;
 	while (ptr)
@@ -84,9 +84,9 @@ void		ft_check_argv(tl_list **list)
 		ft_execute_argv(list);
 }
 
-void		ft_execute_argv(tl_list **list)
+void		ft_execute_argv(t_ls **list)
 {
-	tl_list	*ptr;
+	t_ls	*ptr;
 
 	ptr = ft_just_argv(list);
 	if (g_l == 1)
@@ -97,11 +97,11 @@ void		ft_execute_argv(tl_list **list)
 		ft_emthy_argv(&ptr);
 }
 
-void		ft_sort_for_ck_ar(tl_list **elem, tl_list **list)
+void		ft_sort_for_ck_ar(t_ls **elem, t_ls **list)
 {
-	tl_list *ptr;
-	tl_list *su;
-	tl_list *ck;
+	t_ls *ptr;
+	t_ls *su;
+	t_ls *ck;
 
 	ptr = *elem;
 	if (ptr->prev == NULL)

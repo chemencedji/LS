@@ -13,11 +13,11 @@
 #include "libft/includes/libft.h"
 #include "ft_ls.h"
 
-int					ft_block_size(tl_list **all)
+int					ft_block_size(t_ls **all)
 {
 	int				i;
 	struct stat		sd;
-	tl_list			*ptr;
+	t_ls			*ptr;
 	char			*str;
 
 	i = 0;
@@ -61,13 +61,13 @@ int					ft_is_link(char *path)
 	return (S_ISLNK(path_stat.st_mode));
 }
 
-void				ft_set_time(tl_list **ptr)
+void				ft_set_time(t_ls **ptr)
 {
 	struct timespec	pt;
-	tl_list			*elem;
+	t_ls			*elem;
 
 	elem = *ptr;
-	pt = get_stat(ft_strjoin_ls(elem->path, elem->name)).st_mtimespec;
+	/*pt = get_stat(ft_strjoin_ls(elem->path, elem->name)).st_mtimespec;*/
 	elem->tv_sec = pt.tv_sec;
 	elem->tv_nsec = pt.tv_nsec;
 }

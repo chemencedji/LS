@@ -53,10 +53,10 @@ void			ft_size_ls_s4(int nbr)
 		g_size4 = d;
 }
 
-void			ft_size_ls(tl_list **list)
+void			ft_size_ls(t_ls **list)
 {
 	struct stat	pt;
-	tl_list		*ptr;
+	t_ls		*ptr;
 
 	ptr = *list;
 	g_size1 = 0;

@@ -13,10 +13,10 @@
 #include "libft/includes/libft.h"
 #include "ft_ls.h"
 
-int			ft_argv_scrol(tl_list **list)
+int			ft_argv_scrol(t_ls **list)
 {
 	int		x;
-	tl_list *a;
+	t_ls *a;
 	DIR		*dir;
 
 	x = 0;
@@ -42,9 +42,9 @@ int			ft_argv_scrol(tl_list **list)
 	return (x);
 }
 
-void		ft_list_scrol(tl_list **list)
+void		ft_list_scrol(t_ls **list)
 {
-	tl_list	*all_list;
+	t_ls	*all_list;
 
 	all_list = *list;
 	while (all_list)

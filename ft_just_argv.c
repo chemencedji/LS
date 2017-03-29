@@ -13,10 +13,10 @@
 #include "libft/includes/libft.h"
 #include "ft_ls.h"
 
-tl_list				*ft_just_argv(tl_list **list)
+t_ls				*ft_just_argv(t_ls **list)
 {
-	tl_list			*ptr;
-	tl_list			*all_list;
+	t_ls			*ptr;
+	t_ls			*all_list;
 
 	ptr = *list;
 	all_list = NULL;
@@ -32,9 +32,9 @@ tl_list				*ft_just_argv(tl_list **list)
 	return (all_list);
 }
 
-tl_list				*ft_cr_argvlist(char *name, char *str)
+t_ls				*ft_cr_argvlist(char *name, char *str)
 {
-	tl_list			*elem;
+	t_ls			*elem;
 
 	elem = ft_cr_argv(name, str);
 	if (elem == NULL)
@@ -58,9 +58,9 @@ tl_list				*ft_cr_argvlist(char *name, char *str)
 	return (elem);
 }
 
-char				*ft_linkname(tl_list **elem)
+char				*ft_linkname(t_ls **elem)
 {
-	tl_list			*p;
+	t_ls			*p;
 	char			*name;
 	ssize_t			r;
 	struct stat		buf;
@@ -79,10 +79,10 @@ char				*ft_linkname(tl_list **elem)
 	return (name);
 }
 
-tl_list				*list_create_ar(tl_list **begin_list, char *n, char *str)
+t_ls				*list_create_ar(t_ls **begin_list, char *n, char *str)
 {
-	tl_list			*ret;
-	tl_list			*ptr;
+	t_ls			*ret;
+	t_ls			*ptr;
 
 	ptr = *begin_list;
 	ret = ft_cr_argvlist(n, str);
@@ -105,10 +105,10 @@ tl_list				*list_create_ar(tl_list **begin_list, char *n, char *str)
 	return (return_tlist(&ptr, begin_list, &ret));
 }
 
-tl_list				*return_tlist(tl_list **p, tl_list **b, tl_list **r)
+t_ls				*return_tlist(t_ls **p, t_ls **b, t_ls **r)
 {
-	tl_list			*ptr;
-	tl_list			*ret;
+	t_ls			*ptr;
+	t_ls			*ret;
 
 	ptr = *p;
 	ret = *r;
